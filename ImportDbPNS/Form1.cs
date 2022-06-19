@@ -301,7 +301,6 @@ namespace ImportDbPNS
                 SQL_Insert = SQL_Insert.Remove(SQL_Insert.Length - 1, 1);
                 SQL_Insert = SQL_Insert + ";";
 
-                //SqlConnection conn = new SqlConnection("Data Source = 192.168.10.51,3739; Initial Catalog = PNS; User Id = sa; Password = d120588$788455"); //Cria a conexão com o Banco de dados devido a Dll que tem na pasta do programa.
                 SqlCommand cmd = new SqlCommand(SQL_Insert);
 
                 //conn.Open();
@@ -318,6 +317,7 @@ namespace ImportDbPNS
 
         private void btnNomeclatura_Click(object sender, EventArgs e)
         {
+
             try
             {
                 conn = new SqlConnection($"Data Source = {txtEndereco.Text}; User Id = sa; Password ={txtSenhaBD.Text}"); //Cria a conexão com o Banco de dados devido a Dll que tem na pasta do programa.
