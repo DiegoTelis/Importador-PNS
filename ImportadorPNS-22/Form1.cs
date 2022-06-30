@@ -7,6 +7,8 @@ namespace ImportadorPNS_22
         OpenFileDialog op;
         string Dir;
         Controler controler;
+        bool VerificaLabel = true;
+        List<string> lstTabelas;
 
 
 
@@ -15,7 +17,7 @@ namespace ImportadorPNS_22
             InitializeComponent();
             controler = new Controler();
             op = new OpenFileDialog();
-           
+           lstTabelas = new List<string>();
         }
 
         private void btnBase_Click(object sender, EventArgs e)
@@ -36,6 +38,8 @@ namespace ImportadorPNS_22
             
             controler.CriaEstrutura(txtEstrutura.Text);
 
+            lstTabelas.AddRange(controler.lstTabelas);
+            lblProx.Text = "Próxima tabela: "+lstTabelas.FirstOrDefault();
         }
 
         private void btnNomeclatura_Click(object sender, EventArgs e)
@@ -48,11 +52,13 @@ namespace ImportadorPNS_22
             controler.CriaNomeclatura(txtNomeclatura.Text);
         }
 
-        private void button1_Click(object sender, EventArgs e)
         {
 
+            Thread t = new Thread(AtualizaLabel);
+            t.Start();
+            await controler.Importar(txtBasePNS.Text);
+            VerificaLabel = false;
             //para poder confirmar o andamento
-            ///lblResult.Invoke(new MethodInvoker(() => lblResult.Text = string.Format("Importando tabela:{0}, \nQTD de linhas Alteradas:{1}", item, ContTotal)));
 
         }
     }

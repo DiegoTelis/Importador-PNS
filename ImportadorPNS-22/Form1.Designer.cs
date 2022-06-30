@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTabela = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,14 +45,17 @@
             this.btnBase = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBasePNS = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblHist = new System.Windows.Forms.Label();
+            this.lblProx = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblTabela);
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label5);
@@ -72,17 +76,26 @@
             this.panel1.Size = new System.Drawing.Size(411, 441);
             this.panel1.TabIndex = 0;
             // 
+            // lblTabela
+            // 
+            this.lblTabela.AutoSize = true;
+            this.lblTabela.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTabela.Location = new System.Drawing.Point(149, 350);
+            this.lblTabela.Name = "lblTabela";
+            this.lblTabela.Size = new System.Drawing.Size(60, 21);
+            this.lblTabela.TabIndex = 15;
+            this.lblTabela.Text = "Tabelas";
+            // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(17, 366);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(378, 23);
             this.progressBar1.TabIndex = 14;
+            this.progressBar1.Value = 1;
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(105, 280);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 71);
             this.button1.TabIndex = 13;
@@ -106,7 +119,6 @@
             this.txtSenhaSQL.PasswordChar = '*';
             this.txtSenhaSQL.Size = new System.Drawing.Size(131, 23);
             this.txtSenhaSQL.TabIndex = 2;
-            this.txtSenhaSQL.Text = "123456";
             // 
             // label4
             // 
@@ -123,7 +135,6 @@
             this.txtIPSQL.Name = "txtIPSQL";
             this.txtIPSQL.Size = new System.Drawing.Size(131, 23);
             this.txtIPSQL.TabIndex = 1;
-            this.txtIPSQL.Text = "192.168.10.100,3739";
             // 
             // btnNomeclatura
             // 
@@ -203,22 +214,33 @@
             this.txtBasePNS.Size = new System.Drawing.Size(293, 23);
             this.txtBasePNS.TabIndex = 0;
             // 
-            // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(420, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(375, 441);
             this.panel2.TabIndex = 1;
+            // 
+            // lblHist
+            // 
+            this.lblHist.AutoSize = true;
+            this.lblHist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblHist.Location = new System.Drawing.Point(21, 155);
+            this.lblHist.Name = "lblHist";
+            this.lblHist.Size = new System.Drawing.Size(94, 15);
+            this.lblHist.TabIndex = 2;
+            this.lblHist.Text = "Tabelas prontas: ";
+            // 
+            // lblProx
+            // 
+            this.lblProx.AutoSize = true;
+            this.lblProx.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblProx.Location = new System.Drawing.Point(21, 86);
+            this.lblProx.Name = "lblProx";
+            this.lblProx.Size = new System.Drawing.Size(0, 15);
+            this.lblProx.TabIndex = 13;
             // 
             // Form1
             // 
@@ -255,7 +277,9 @@
         private TextBox txtSenhaSQL;
         private ProgressBar progressBar1;
         private Button button1;
-        private Label label6;
         private Panel panel2;
+        private Label lblTabela;
+        private Label lblHist;
+        private Label lblProx;
     }
 }
